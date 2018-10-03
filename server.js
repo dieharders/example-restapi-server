@@ -38,7 +38,7 @@ mongoose.connect(dbConfig.url)
 // Setup CORS
 const cors = require('cors')
 const corsOptions = {
-  origin: 'https://example-restapi-client.herokuapp.com',
+  origin: 'http://localhost:4200' || 'https://example-restapi-client.herokuapp.com',
   optionsSuccessStatus: 200
 }
 app.use(cors(corsOptions));
