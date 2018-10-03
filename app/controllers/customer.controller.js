@@ -1,49 +1,49 @@
-const Customer = require('../models/customer.model.js');
-
-// Init local database. Mimicks a mongo setup.
+// Init local database. Mimicks data in a mongo DB.
 // Any edits/changes will be lost when restarting the front-end.
 var customers = [
     {
         _id: "1",
-        firstname: "Joe",
-        lastname: "Thomas",
-        age: 36
+        firstname: "Johnny",
+        lastname: "Storm",
+        age: 26,
+        hobbies: [
+            "Playing sports",
+            "Dating girls",
+            "Catching fire"
+        ]
     },
     {
         _id: "2",
-        firstname: "Peter",
-        lastname: "Smith",
-        age: 18
+        firstname: "Sue",
+        lastname: "Storm",
+        age: 29,
+        hobbies: [
+            "Turning invisible",
+            "Making costumes",
+            "Being sassy"
+        ]
     },
     {
         _id: "3",
-        firstname: "Lauren",
-        lastname: "Taylor",
-        age: 31
+        firstname: "Reed",
+        lastname: "Richards",
+        age: 47,
+        hobbies: [
+            "Being a dick",
+            "Being super stretchy",
+            "Makeing science"
+        ]
     },
     {
         _id: "4",
-        firstname: "Mary",
-        lastname: "Taylor",
-        age: 24
-    },
-    {
-        _id: "5",
-        firstname: "David",
-        lastname: "Moore",
-        age: 25
-    },
-    {
-        _id: "6",
-        firstname: "Holly",
-        lastname: "Davies",
-        age: 27
-    },
-    {
-        _id: "7",
-        firstname: "Michael",
-        lastname: "Brown",
-        age: 45
+        firstname: "Ben",
+        lastname: "Grimm",
+        age: 36,
+        hobbies: [
+            "Clobberin things",
+            "Flying planes",
+            "Playing football"
+        ]
     }
 ]
 
@@ -100,6 +100,7 @@ exports.delete = (req, res) => {
 
 //** Functions for MongoDB **//
 /*
+const Customer = require('../models/customer.model.js');
 //
 // POST a Customer
 exports.create = (req, res) => {

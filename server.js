@@ -1,3 +1,5 @@
+//** This is the back-end for the project 'example-restapi-client' **//
+//** This server handles requests from client for non-persistent data stored locally (no external DB) **//
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
@@ -36,10 +38,10 @@ mongoose.connect(dbConfig.url)
 */
 
 // Setup CORS
-const cors = require('cors')
+const cors = require('cors');
+const hostUrl = process.env.CLIENT || 'http://localhost:4200';
 const corsOptions = {
-  // For testing locally: 'http://localhost:4200'
-  origin: 'https://example-restapi-client.herokuapp.com',
+  origin: hostUrl,
   optionsSuccessStatus: 200
 }
 app.use(cors(corsOptions));
@@ -47,15 +49,13 @@ app.use(cors(corsOptions));
 // Add routes
 require('./app/routes/customer.routes.js')(app);
 
-// Set server ports
+// Set server ports/host
+const host = process.env.HOST || 'localhost';
 const port = process.env.PORT || 8080; // listen on default Heroku port
 // Create a Server
 const server = app.listen(port, function () {
-
-  let host = server.address().address;
-  //let port = server.address().port;
-
-  console.log("App listening at http://%s:%s", host, port);
+  // Server has started!
+  console.log("App listening at http://", host, ':', port);
 });
 
 function initial(){
