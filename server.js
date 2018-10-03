@@ -3,16 +3,16 @@ const app = express();
 const bodyParser = require('body-parser');
 app.use(bodyParser.json())
 
+/*
 // Configuring the database
-//const dbConfig = require('./app/config/mongodb.config.js');
-//const mongoose = require('mongoose');
+const dbConfig = require('./app/config/mongodb.config.js');
+const mongoose = require('mongoose');
 
 const Customer = require('./app/models/customer.model.js');
 
-//mongoose.Promise = global.Promise;
+mongoose.Promise = global.Promise;
 
 // Connecting to the database
-/*
 mongoose.connect(dbConfig.url)
 .then(() => {
     console.log("Successfully connected to MongoDB.");    
@@ -34,29 +34,30 @@ mongoose.connect(dbConfig.url)
     process.exit();
 });
 */
+
+// Setup CORS
 const cors = require('cors')
 const corsOptions = {
   origin: 'http://localhost:4200',
   optionsSuccessStatus: 200
 }
- 
-app.use(cors(corsOptions))
+app.use(cors(corsOptions));
 
+// Add routes
 require('./app/routes/customer.routes.js')(app);
 
-// Create a Server
+// Set server ports
 const port = process.env.PORT || 8080; // listen on default Heroku port
+// Create a Server
+const server = app.listen(port, function () {
 
-const server = app.listen(8080, function () {
+  let host = server.address().address;
+  //let port = server.address().port;
 
-  let host = server.address().address
-  //let port = server.address().port
-
-  console.log("App listening at http://%s:%s", host, port)
-})
+  console.log("App listening at http://%s:%s", host, port);
+});
 
 function initial(){
- 
     /*
     let customers = [
       {
