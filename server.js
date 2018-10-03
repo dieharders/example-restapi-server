@@ -45,10 +45,12 @@ app.use(cors(corsOptions))
 require('./app/routes/customer.routes.js')(app);
 
 // Create a Server
+const port = process.env.PORT || 8080; // listen on default Heroku port
+
 const server = app.listen(8080, function () {
 
   let host = server.address().address
-  let port = server.address().port
+  //let port = server.address().port
 
   console.log("App listening at http://%s:%s", host, port)
 })
