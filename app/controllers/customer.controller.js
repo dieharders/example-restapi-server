@@ -31,7 +31,7 @@ var customers = [
         hobbies: [
             "Being a dick",
             "Being super stretchy",
-            "Makeing science"
+            "Doing science"
         ]
     },
     {
