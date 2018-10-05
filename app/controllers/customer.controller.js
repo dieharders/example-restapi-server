@@ -7,9 +7,9 @@ var customers = [
         lastname: "Storm",
         age: 26,
         hobbies: [
-            "Playing sports",
-            "Dating girls",
-            "Catching fire"
+            "Playing sports🏆",
+            "Dating girls😎",
+            "Catching fire🔥"
         ]
     },
     {
@@ -18,8 +18,8 @@ var customers = [
         lastname: "Storm",
         age: 29,
         hobbies: [
-            "Turning invisible",
-            "Making costumes",
+            "Turning invisible✨",
+            "Making costumes👘",
             "Being sassy"
         ]
     },
@@ -29,9 +29,9 @@ var customers = [
         lastname: "Richards",
         age: 47,
         hobbies: [
-            "Being a dick",
+            "Being a dick🤬",
             "Being super stretchy",
-            "Doing science"
+            "Doing science⚗️"
         ]
     },
     {
@@ -40,9 +40,9 @@ var customers = [
         lastname: "Grimm",
         age: 36,
         hobbies: [
-            "Clobberin things",
-            "Flying planes",
-            "Playing football"
+            "Clobberin things💪",
+            "Flying planes🛩️",
+            "Playing football🏈"
         ]
     }
 ]
