@@ -1,7 +1,7 @@
 {
   "name": "example-restapi-server",
   "version": "0.0.1",
-  "description": "A Node.js REST-API for serving profiles to client.",
+  "description": "A Node.js REST-API for serving hero profiles to client.",
   "main": "server.js",
   "start": "node server.js",
   "scripts": {

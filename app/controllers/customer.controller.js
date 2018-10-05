@@ -7,9 +7,9 @@ var customers = [
         lastname: "Storm",
         age: 26,
         hobbies: [
-            "Playing sports🏆",
-            "Dating girls😎",
-            "Catching fire🔥"
+            "Playing 🏆sports",
+            "Dating 😎girls",
+            "Catching 🔥fire"
         ]
     },
     {
@@ -18,8 +18,8 @@ var customers = [
         lastname: "Storm",
         age: 29,
         hobbies: [
-            "Turning invisible✨",
-            "Making costumes👘",
+            "Turning ✨invisible",
+            "Making 👘costumes",
             "Being sassy"
         ]
     },
@@ -29,20 +29,20 @@ var customers = [
         lastname: "Richards",
         age: 47,
         hobbies: [
-            "Being a dick🤬",
+            "Being a 🤬dick",
             "Being super stretchy",
-            "Doing science⚗️"
+            "Doing ⚗️science"
         ]
     },
     {
         _id: "4",
         firstname: "Ben",
         lastname: "Grimm",
-        age: 36,
+        age: 35,
         hobbies: [
-            "Clobberin things💪",
-            "Flying planes🛩️",
-            "Playing football🏈"
+            "Clobberin 💪things",
+            "Flying 🛩️planes",
+            "Playing 🏈football"
         ]
     }
 ]
@@ -58,7 +58,7 @@ function findCustomerIndex(id) {
 }
 // POST a Customer //
 exports.create = (req, res) => {
-    // Need to add a unique id to this object (Auto added by MongoDB, etc)
+    // Need to add a unique id to this object
     let newObj = req.body;
     let randNum = Math.round(100000*Math.random());
     newObj._id = randNum.toString();
@@ -97,99 +97,3 @@ exports.delete = (req, res) => {
     // Send updated customer data
     res.json(customers);
 };
-
-//** Functions for MongoDB **//
-/*
-const Customer = require('../models/customer.model.js');
-//
-// POST a Customer
-exports.create = (req, res) => {
-    // Create a Customer
-    const customer = new Customer(req.body);
-
-    // Save a Customer in the MongoDB
-    customer.save()
-    .then(data => {
-        res.json(data);
-    }).catch(err => {
-        res.status(500).json({
-            msg: err.message
-        });
-    });
-};
-// FETCH all Customers
-exports.findAll = (req, res) => {
-    Customer.find()
-    .then(customers => {
-        res.json(customers);
-    }).catch(err => {
-        res.status(500).send({
-            msg: err.message
-        });
-    });
-};
-// FIND a Customer
-exports.findOne = (req, res) => {
-    Customer.findById(req.params.customerId)
-    .then(customer => {
-        if(!customer) {
-            return res.status(404).json({
-                msg: "Customer not found with id " + req.params.customerId
-            });            
-        }
-        res.json(customer);
-    }).catch(err => {
-        if(err.kind === 'ObjectId') {
-            return res.status(404).json({
-                msg: "Customer not found with id " + req.params.customerId
-            });                
-        }
-        return res.status(500).json({
-            msg: "Error retrieving Customer with id " + req.params.customerId
-        });
-    });
-};
-// UPDATE a Customer
-exports.update = (req, res) => {
-    // Find customer and update it
-    Customer.findByIdAndUpdate(req.body._id, req.body, {new: true})
-    .then(customer => {
-        if(!customer) {
-            return res.status(404).json({
-                msg: "Customer not found with id " + req.params.customerId
-            });
-        }
-        res.json(customer);
-    }).catch(err => {
-        if(err.kind === 'ObjectId') {
-            return res.status(404).json({
-                msg: "Customer not found with id " + req.params.customerId
-            });                
-        }
-        return res.status(500).json({
-            msg: "Error updating customer with id " + req.params.customerId
-        });
-    });
-};
-// DELETE a Customer
-exports.delete = (req, res) => {
-    Customer.findByIdAndRemove(req.params.customerId)
-    .then(customer => {
-        if(!customer) {
-            return res.status(404).json({
-                msg: "Customer not found with id " + req.params.customerId
-            });
-        }
-        res.json({msg: "Customer deleted successfully!"});
-    }).catch(err => {
-        if(err.kind === 'ObjectId' || err.name === 'NotFound') {
-            return res.status(404).json({
-                msg: "Customer not found with id " + req.params.customerId
-            });                
-        }
-        return res.status(500).json({
-            msg: "Could not delete customer with id " + req.params.customerId
-        });
-    });
-};
-*/
