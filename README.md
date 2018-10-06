@@ -20,4 +20,4 @@ If you intend to host this server on a different domain than the Front-End, be s
 
 ## Server Host & Port ENV variables
 
-Be sure to set ENV files to point to your Server's Host domain and port based on whatever hosting provider you deploy this server to (Heroku). The default host is `localhost`. The default port is `8080`.
+Be sure to set ENV vars to point to your Server's Host domain and port based on whatever hosting provider you deploy this server to (Heroku). The default host is `localhost`. The default port is `8080`.
