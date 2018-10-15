@@ -1,5 +1,7 @@
 # Simple Node.js, Express (REST API) Server
 
+![Preview](https://github.com/dieharders/example-restapi-server/blob/master/preview-1.JPG)
+
 ## Live demo: https://example-restapi-client.firebaseapp.com/
 This is a simple example of a Back-End that takes requests from a client and sends data stored locally on the server back to the client. This data can be edited or added to by the client but if the server resets or goes to sleep, the data will be reloaded from memory (data is semi-stateless).
 
